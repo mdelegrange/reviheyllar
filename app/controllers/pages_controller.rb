@@ -12,5 +12,27 @@ class PagesController < ApplicationController
   end
 
   def enigme1
+    if params[:attempt]
+      if params[:attempt].upcase == "FAITES TOMBER LES BINOCLARDS"
+        redirect_to binoclards_path
+      else
+        flash[:error] = "Mauvaise réponse, essayez encore..."
+        render 'enigme1'
+      end
+    end
+  end
+
+  def binoclards
+    if params[:attempt]
+      if params[:attempt].upcase == "HOMME"
+        redirect_to homme_path
+      else
+        flash[:error] = "Mauvaise réponse, essayez encore..."
+        render 'binoclards'
+      end
+    end
+  end
+
+  def homme
   end
 end

@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   post 'password', to: 'pages#password'
   get 'password-166C21241011', to: 'pages#password_166C21241011'
   get 'enigme1', to: 'pages#enigme1'
+  post 'enigme1', to: 'pages#enigme1'
+  get 'binoclards', to: 'pages#binoclards'
+  post 'binoclards', to: 'pages#binoclards'
+  get 'homme', to: 'pages#homme'
+  post 'homme', to: 'pages#homme'
 end
