@@ -1,1 +1,15 @@
-// Specific CSS for your home-page
+.home-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    font-size: 25px;
+    margin-top: 0;
+  }
+}
+
+.flash_error {
+  color: red;
+}
