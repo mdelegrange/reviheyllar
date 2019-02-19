@@ -13,3 +13,14 @@
 .flash_error {
   color: red;
 }
+
+
+.pictures {
+  display: flex;
+}
+
+video {
+  @media(max-width: 720px) {
+    width: 100vw;
+  }
+}

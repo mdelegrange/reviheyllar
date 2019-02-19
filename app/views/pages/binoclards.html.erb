@@ -1,7 +1,13 @@
 <div class="home-container">
   <h1>Enigme 2</h1>
   <h2>Lors du Rallye nos nerfs ont été mis à rude épreuve. Heureusement que nous n'étions pas seuls...</h2>
-
+  <div class="pictures">
+    <%= image_tag "perso1.jpg", alt: "perso1", width: 250, height: 370 %>
+    <%= image_tag "perso2.jpg", alt: "perso2", width: 250, height: 370 %>
+    <%= image_tag "perso3.jpg", alt: "perso3", width: 250, height: 370 %>
+    <%= image_tag "perso4.jpg", alt: "perso4", width: 250, height: 370 %>
+    <%= image_tag "perso5.jpg", alt: "perso5", width: 250, height: 370 %>
+  </div>
   <%= form_tag binoclards_path, class: 'form-inline' do %>
     <%= text_field_tag :attempt, nil, class: 'form-control'%>
     <%= submit_tag "Valider", class: 'btn btn-primary' %>
