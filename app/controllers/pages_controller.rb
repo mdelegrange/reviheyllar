@@ -10,4 +10,7 @@ class PagesController < ApplicationController
       render 'home'
     end
   end
+
+  def enigme1
+  end
 end
