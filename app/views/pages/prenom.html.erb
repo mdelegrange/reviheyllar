@@ -1,0 +1,15 @@
+<div class="home-container">
+  <h1>Enigme 4</h1>
+  <h2>Désolé pour hier soir d’avoir fini à l’envers, la tête dans le cul, l’cul dans le brouillard </h2>
+  <br>
+  <h2>Qu’avez-vous utilisé pour faire tomber les personnages ?</h2>
+  <%= form_tag prenom_path, class: 'form-inline' do %>
+    <%= text_field_tag :attempt_4, nil, class: 'form-control'%>
+    <%= submit_tag "Valider", class: 'btn btn-primary' %>
+  <% end %>
+  <p class="flash_error">
+    <% if flash[:error] %>
+      <%= flash[:error] %>
+    <% end %>
+  </p>
+</div>

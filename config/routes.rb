@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   post 'binoclards', to: 'pages#binoclards'
   get 'homme', to: 'pages#homme'
   post 'homme', to: 'pages#homme'
+  get 'prenom', to: 'pages#prenom'
+  post 'prenom', to: 'pages#prenom'
+  get 'chapeau', to: 'pages#chapeau'
+  post 'chapeau', to: 'pages#chapeau'
+  get 'bravo', to: 'pages#bravo'
 end

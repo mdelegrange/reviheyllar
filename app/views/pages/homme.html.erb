@@ -1,0 +1,21 @@
+<div class="home-container">
+  <h1>Enigme 3</h1>
+  <div class="audio">
+    <%= audio_tag("song1.mp3", controls: true) %>
+    <%= audio_tag("song2.mp3", controls: true) %>
+    <%= audio_tag("song3.mp3", controls: true) %>
+  </div>
+
+  <h2>Qu’avez-vous utilisé pour faire tomber les personnages ?</h2>
+  <%= form_tag homme_path, class: 'form-inline' do %>
+    <%= text_field_tag :attempt_3, nil, class: 'form-control'%>
+    <%= submit_tag "Valider", class: 'btn btn-primary' %>
+  <% end %>
+  <p class="flash_error">
+    <% if flash[:error] %>
+      <%= flash[:error] %>
+    <% end %>
+  </p>
+</div>
+
+
