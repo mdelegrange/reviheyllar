@@ -3,7 +3,7 @@
   <h2>TA <%= image_tag "bobine.jpg", alt: "bobine" %></h2>
   <br>
   <h2>Qui est le dernier personnage?</h2>
-  <%= form_tag chapeau_path, class: 'form-inline' do %>
+  <%= form_tag enigme5_attempt_path, class: 'form-inline' do %>
     <%= text_field_tag :attempt_5, nil, class: 'form-control'%>
     <%= submit_tag "Valider", class: 'btn btn-primary' %>
   <% end %>

@@ -1,14 +1,24 @@
-<div class="home-container">
-  <h1>Enigme 1</h1>
-  <h2>Comme prévu dans son journal intime, Parker a enfin fin de monter son meuble <strong>IKEA</strong></h2>
-  <h2>XSALWK LGETWJ DWK TAFGUDSJVK</h2>
-  <%= form_tag binoclards_path, class: 'form-inline' do %>
-    <%= text_field_tag :attempt, nil, class: 'form-control'%>
-    <%= submit_tag "Valider", class: 'btn btn-primary' %>
-  <% end %>
-  <p class="flash_error">
-    <% if flash[:error] %>
-      <%= flash[:error] %>
-    <% end %>
-  </p>
+<div class="container home-container text-center">
+  <div class="window">
+    <div class="inner-window">
+      <div class="page-content">
+        <h1>Enigme 1</h1>
+        <p>
+          Comme prévu dans son journal intime, Parker a enfin fini de monter son meuble
+          <br>
+          <strong>IKEA</strong>
+        </p>
+        <p class="t-italic">XSALWK LGETWJ DWK TAFGUDSJVK</p>
+        <%= form_tag enigme1_attempt_path, class: 'form-inline' do %>
+          <%= text_field_tag :attempt, nil, id: "enigme_1", class: 'form-control custom-input', autofocus: true %>
+          <%= submit_tag "Valider", class: 'custom-btn' %>
+        <% end %>
+        <p class="flash_error">
+          <% if flash[:error] %>
+            <%= flash[:error] %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,13 +1,23 @@
-<div class="container home-container">
-  <h1>Site protégé</h1>
-  <h2>Entrez le mot de passe fourni sur la boîte pour accéder au site</h2>
-  <%= form_tag password_path, class: 'form-inline' do %>
-    <%= text_field_tag :attempt, nil, placeholder: '166.........', class: 'form-control'%>
-    <%= submit_tag "Valider", class: 'btn btn-primary' %>
-  <% end %>
-  <p class="flash_error">
-    <% if flash[:error] %>
-      <%= flash[:error] %>
-    <% end %>
-  </p>
+<div class="container home-container text-center">
+  <div class="window">
+    <div class="inner-window">
+      <div class="page-content">
+        <h1>Site protégé</h1>
+        <p>
+          "C'est une boite select ici : c'est quoi le code ?"
+          <br>
+          <span class="t-italic">- LE VIDEUR</span>
+        </p>
+        <%= form_tag password_path, class: 'form-inline' do %>
+          <%= text_field_tag :attempt, nil, placeholder: 'password', class: 'form-control custom-input', autofocus: true %>
+          <%= submit_tag "Valider", class: 'custom-btn' %>
+        <% end %>
+        <% if flash[:error] %>
+          <p class="flash_error">
+            <%= flash[:error] %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

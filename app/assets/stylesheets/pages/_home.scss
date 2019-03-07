@@ -11,6 +11,7 @@
 }
 
 .flash_error {
+  margin-top: 20px;
   color: red;
 }
 
@@ -42,7 +43,7 @@
 
 video {
   @media(max-width: 720px) {
-    width: 100vw;
+    width: 100%;
   }
 }
 

@@ -1,0 +1,30 @@
+h1 {
+  margin-bottom: 40px;
+  margin-top: 0px;
+}
+p {
+  margin-bottom: 30px;
+}
+.custom-input {
+  background: black;
+  color: white;
+  border: none;
+  font-weight: bolder;
+  margin: 10px;
+  &::placeholder {
+    color: white;
+    opacity: 0.9;
+  }
+}
+#enigme_1 {
+  @media(min-width: 650px) {
+    min-width: 420px;
+  }
+}
+
+.t-italic {
+  font-style: italic;
+}
+video {
+  max-width: 600px;
+}
