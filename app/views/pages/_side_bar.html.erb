@@ -1,4 +1,4 @@
-<div class="side-bar">
+<div class="side-bar hidden-under-800px">
   <%= link_to "> énigme n°1", enigme1_path, class:"custom-btn btn-black-t" %>
   <%= link_to "> énigme n°2", enigme2_path, class:"custom-btn btn-black-t #{"opacity-5" unless Answer.last && Answer.last.enigma + 1 >= 2}" %>
   <%= link_to "> énigme n°3", enigme3_path, class:"custom-btn btn-black-t #{"opacity-5" unless Answer.last && Answer.last.enigma + 1 >= 3}" %>

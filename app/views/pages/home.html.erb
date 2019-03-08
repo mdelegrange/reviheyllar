@@ -1,19 +1,17 @@
-<div class="container home-container text-center">
-  <div class="window">
-    <div class="inner-window">
-      <div class="page-content">
-        <h1>Site protégé</h1>
-        <p>
-          "C'est une boite select ici : c'est quoi le code ?"
-          <br>
-          <span class="t-italic">- LE VIDEUR</span>
-        </p>
-        <%= form_tag password_path, class: 'form-inline' do %>
-          <%= text_field_tag :attempt, nil, placeholder: 'password', class: 'form-control custom-input', autofocus: true %>
-          <%= submit_tag "Valider", class: 'custom-btn' %>
-        <% end %>
-        <%= render "errors" %>
-      </div>
+<div class="window">
+  <div class="inner-window">
+    <div class="page-content text-center">
+      <h1>Site protégé</h1>
+      <p>
+        "C'est une boite select ici : c'est quoi le code ?"
+        <br>
+        <span class="t-italic">- LE VIDEUR</span>
+      </p>
+      <%= form_tag password_path, class: 'form-inline' do %>
+        <%= text_field_tag :attempt, nil, placeholder: 'password', class: 'form-control custom-input', autofocus: true %>
+        <%= submit_tag "Valider", class: 'custom-btn' %>
+      <% end %>
+      <%= render "errors" %>
     </div>
   </div>
 </div>

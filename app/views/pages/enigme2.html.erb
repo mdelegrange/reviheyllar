@@ -1,61 +1,33 @@
-<div class="container home-container">
-  <%= render "side_bar", enigma: 2 %>
-  <div class="window">
-    <div class="inner-window">
-      <div class="page-content text-center">
-      <h1>Enigme 2</h1>
-      <p>Lors du Rallye nos nerfs ont été mis à rude épreuve. Heureusement que nous n'étions pas seuls...</p>
-      <div>
-        <%= form_tag enigme2_attempt_path, class: 'form-inline' do %>
-          <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
-          <%= submit_tag "Valider", class: 'custom-btn' %>
-        <% end %>
-        <%= render "errors" %>
+<div class="window">
+  <div class="inner-window">
+    <div class="page-content text-center">
+    <h1>Enigme 2</h1>
+    <p>Lors du Rallye nos nerfs ont été mis à rude épreuve. Heureusement que nous n'étions pas seuls...</p>
+    <div>
+      <%= form_tag enigme2_attempt_path, class: 'form-inline' do %>
+        <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
+        <%= submit_tag "Valider", class: 'custom-btn' %>
+      <% end %>
+      <%= render "errors" %>
+    </div>
+    <div class="pictures-container">
+      <div class="pictures">
+        <%= image_tag "perso1.jpg", alt: "perso1" %>
       </div>
-      <div class="pictures-container">
-        <div class="pictures">
-          <!-- <div class="picture"> -->
-            <%= image_tag "perso1.jpg", alt: "perso1" %>
-          <!-- </div> -->
-          <!-- <div class="picture">
-            <h2><strong>_</strong> _ _ _ _</h2>
-          </div> -->
-        </div>
-        <div class="pictures">
-          <!-- <div class="picture">
-            <h2><strong>_</strong> _ _ _ _</h2>
-          </div> -->
-          <!-- <div class="picture"> -->
-            <%= image_tag "perso2.jpg", alt: "perso2" %>
-          <!-- </div> -->
-        </div>
-        <div class="pictures">
-<!--           <div class="picture">
-            <h2><strong>_</strong> _ _ _ _ _</h2>
-          </div> -->
-          <!-- <div class="picture"> -->
-            <%= image_tag "perso3.jpg", alt: "perso3" %>
-          <!-- </div> -->
-        </div>
-        <div class="pictures">
-          <!-- <div class="picture"> -->
-            <%= image_tag "perso4.jpg", alt: "perso4" %>
-          <!-- </div> -->
-          <!-- <div class="picture">
-            <h2><strong>_</strong> _ _ _ _</h2>
-          </div> -->
-        </div>
-        <div class="pictures">
-<!--           <div class="picture">
-            <h2><strong>_</strong> _ _ _ _ _</h2>
-          </div> -->
-          <!-- <div class="picture"> -->
-            <%= image_tag "perso5.jpg", alt: "perso5" %>
-          <!-- </div> -->
-        </div>
-
+      <div class="pictures">
+        <%= image_tag "perso2.jpg", alt: "perso2" %>
+      </div>
+      <div class="pictures">
+        <%= image_tag "perso3.jpg", alt: "perso3" %>
+      </div>
+      <div class="pictures">
+        <%= image_tag "perso4.jpg", alt: "perso4" %>
+      </div>
+      <div class="pictures">
+        <%= image_tag "perso5.jpg", alt: "perso5" %>
       </div>
     </div>
   </div>
 </div>
+
 
