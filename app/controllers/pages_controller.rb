@@ -1,22 +1,26 @@
 class PagesController < ApplicationController
+  before_action :set_attempt, only: [ :password, :enigme1_attempt,
+    :enigme2_attempt, :enigme3_attempt, :enigme4_attempt, :enigme5_attempt]
   def home
   end
 
   def password
-    unless params[:attempt].upcase == "166C21241011"
+    unless @attempt.upcase == "166C21241011"
       flash[:error] = "Mauvais mot de passe, essayez encore..."
       redirect_to root_path
     end
   end
 
   def enigme1
+    @answer = Answer.find_by(enigma: "enigme1")
   end
 
   def enigme1_attempt
-    if params[:attempt].upcase == "FAITES TOMBER LES BINOCLARDS"
+    if @attempt.upcase == "FAITES TOMBER LES BINOCLARDS"
+      Answer.create!(enigma: "enigme1", content: "Faites tomber les binoclards")
       redirect_to enigme2_path
     else
-      flash[:error] = "Mauvaise réponse, essayez encore..."
+      flash_error
       redirect_to enigme1_path
     end
   end
@@ -25,10 +29,10 @@ class PagesController < ApplicationController
   end
 
   def enigme2_attempt
-    if params[:attempt_2].upcase == "HOMME"
-      redirect_to emigme3_path
+    if @attempt.upcase == "HOMME"
+      redirect_to enigme3_path
     else
-      flash[:error] = "Mauvaise réponse, essayez encore..."
+      flash_error
       redirect_to enigme2_path
     end
   end
@@ -38,13 +42,12 @@ class PagesController < ApplicationController
   end
 
   def enigme3_attempt
-    if params[:attempt_3]
-      if params[:attempt_3].upcase == "PRENOM" || params[:attempt_3].upcase == "PRÉNOM"
-        redirect_to prenom_path
-      else
-        flash[:error] = "Mauvaise réponse, essayez encore..."
-        render 'homme'
-      end
+    answers = ["PRENOM", "PRÉNOM","PRENOMS", "PRÉNOMS"]
+    if answers.include?(@attempt.upcase)
+      redirect_to enigme4_path
+    else
+      flash_error
+      redirect_to enigme3_path
     end
   end
 
@@ -52,13 +55,12 @@ class PagesController < ApplicationController
   end
 
   def enigme4_attempt
-    if params[:attempt_4]
-      if params[:attempt_4].upcase == "CHAPEAU"
-        redirect_to chapeau_path
-      else
-        flash[:error] = "Mauvaise réponse, essayez encore..."
-        render 'prenom'
-      end
+    answers = ["CHAPEAU", "CHAPEAUX"]
+    if answers.include?(@attempt.upcase)
+      redirect_to enigme5_path
+    else
+      flash_error
+      redirect_to enigme4_path
     end
   end
 
@@ -66,16 +68,24 @@ class PagesController < ApplicationController
   end
 
   def enigme5_attempt
-    if params[:attempt_5]
-      if params[:attempt_5].upcase == "JULIE"
-        redirect_to bravo_path
-      else
-        flash[:error] = "Mauvaise réponse, essayez encore..."
-        render 'chapeau'
-      end
+    if @attempt.upcase == "JULIE"
+      redirect_to bravo_path
+    else
+      flash_error
+      render 'chapeau'
     end
   end
 
   def bravo
+  end
+
+  private
+
+  def set_attempt
+    @attempt = params[:attempt]
+  end
+
+  def flash_error
+    flash[:error] = "#{@attempt}?!? Mauvaise réponse, essayez encore..."
   end
 end

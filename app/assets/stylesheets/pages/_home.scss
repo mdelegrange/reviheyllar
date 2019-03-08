@@ -13,6 +13,7 @@
 .flash_error {
   margin-top: 20px;
   color: red;
+  min-height: 31px;
 }
 
 
@@ -26,6 +27,15 @@
   display: flex;
   justify-content: center;
   margin: 10px 30px;
+  img {
+    vertical-align: middle;
+    border: 2px solid black;
+    padding: 5px;
+    box-shadow: 0 0 3px rgba(30, 30, 30, 0.3);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 140px;
+  }
 }
 
 .picture {
@@ -48,7 +58,11 @@ video {
 }
 
 .audio {
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 40px;
+  audio {
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
+  }
 }
 

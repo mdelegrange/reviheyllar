@@ -3,23 +3,19 @@
     <div class="inner-window">
       <div class="page-content">
       <h1>Enigme 2</h1>
-      <h2>Lors du Rallye nos nerfs ont été mis à rude épreuve. Heureusement que nous n'étions pas seuls...</h2>
+      <p>Lors du Rallye nos nerfs ont été mis à rude épreuve. Heureusement que nous n'étions pas seuls...</p>
       <div>
-        <%= form_tag enigme3_path, class: 'form-inline' do %>
-          <%= text_field_tag :attempt_2, nil, class: 'form-control'%>
-          <%= submit_tag "Valider", class: 'btn btn-primary' %>
+        <%= form_tag enigme2_attempt_path, class: 'form-inline' do %>
+          <%= text_field_tag :attempt, nil, class: 'form-control custom-input', autofocus: true %>
+          <%= submit_tag "Valider", class: 'custom-btn' %>
         <% end %>
-        <p class="flash_error">
-          <% if flash[:error] %>
-            <%= flash[:error] %>
-          <% end %>
-        </p>
+        <%= render "errors" %>
       </div>
       <div class="pictures-container">
         <div class="pictures">
-          <div class="picture">
-            <%= image_tag "perso1.jpg", alt: "perso1", width: 199, height: 294 %>
-          </div>
+          <!-- <div class="picture"> -->
+            <%= image_tag "perso1.jpg", alt: "perso1" %>
+          <!-- </div> -->
           <!-- <div class="picture">
             <h2><strong>_</strong> _ _ _ _</h2>
           </div> -->
@@ -28,22 +24,22 @@
           <!-- <div class="picture">
             <h2><strong>_</strong> _ _ _ _</h2>
           </div> -->
-          <div class="picture">
-            <%= image_tag "perso2.jpg", alt: "perso2", width: 199, height: 294 %>
-          </div>
+          <!-- <div class="picture"> -->
+            <%= image_tag "perso2.jpg", alt: "perso2" %>
+          <!-- </div> -->
         </div>
         <div class="pictures">
 <!--           <div class="picture">
             <h2><strong>_</strong> _ _ _ _ _</h2>
           </div> -->
-          <div class="picture">
-            <%= image_tag "perso3.jpg", alt: "perso3", width: 199, height: 294 %>
-          </div>
+          <!-- <div class="picture"> -->
+            <%= image_tag "perso3.jpg", alt: "perso3" %>
+          <!-- </div> -->
         </div>
         <div class="pictures">
-          <div class="picture">
-            <%= image_tag "perso4.jpg", alt: "perso4", width: 199, height: 294 %>
-          </div>
+          <!-- <div class="picture"> -->
+            <%= image_tag "perso4.jpg", alt: "perso4" %>
+          <!-- </div> -->
           <!-- <div class="picture">
             <h2><strong>_</strong> _ _ _ _</h2>
           </div> -->
@@ -52,9 +48,9 @@
 <!--           <div class="picture">
             <h2><strong>_</strong> _ _ _ _ _</h2>
           </div> -->
-          <div class="picture">
-            <%= image_tag "perso5.jpg", alt: "perso5", width: 199, height: 294 %>
-          </div>
+          <!-- <div class="picture"> -->
+            <%= image_tag "perso5.jpg", alt: "perso5" %>
+          <!-- </div> -->
         </div>
 
       </div>

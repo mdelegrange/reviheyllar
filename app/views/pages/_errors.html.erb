@@ -1,0 +1,7 @@
+<p class="flash_error">
+  <% if @answer %>
+    <%=  %>
+  <% elsif flash[:error] %>
+    <%= flash[:error] %>
+  <% end %>
+</p>

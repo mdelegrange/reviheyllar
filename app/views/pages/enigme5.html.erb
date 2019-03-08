@@ -1,15 +1,19 @@
-<div class="home-container">
-  <h1>Enigme 5</h1>
-  <h2>TA <%= image_tag "bobine.jpg", alt: "bobine" %></h2>
-  <br>
-  <h2>Qui est le dernier personnage?</h2>
-  <%= form_tag enigme5_attempt_path, class: 'form-inline' do %>
-    <%= text_field_tag :attempt_5, nil, class: 'form-control'%>
-    <%= submit_tag "Valider", class: 'btn btn-primary' %>
-  <% end %>
-  <p class="flash_error">
-    <% if flash[:error] %>
-      <%= flash[:error] %>
-    <% end %>
-  </p>
+<div class="container home-container text-center">
+  <div class="window">
+    <div class="inner-window">
+      <div class="page-content">
+        <h1>Enigme 5</h1>
+        <div class="flex-line">
+          <div>TA</div>
+          <%= image_tag "bobine.jpg", alt: "bobine" %>
+        </div>
+        <p>Qui est le dernier personnage?</p>
+        <%= form_tag enigme5_attempt_path, class: 'form-inline' do %>
+          <%= text_field_tag :attempt, nil, class: 'form-control custom-input', autofocus: true %>
+          <%= submit_tag "Valider", class: 'custom-btn' %>
+        <% end %>
+        <%= render "errors" %>
+      </div>
+    </div>
+  </div>
 </div>

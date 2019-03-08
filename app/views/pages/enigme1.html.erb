@@ -4,7 +4,9 @@
       <div class="page-content">
         <h1>Enigme 1</h1>
         <p>
-          Comme prévu dans son journal intime, Parker a enfin fini de monter son meuble
+          Comme prévu dans son journal intime,
+          <br>
+          Parker a enfin fini de monter son meuble
           <br>
           <strong>IKEA</strong>
         </p>
@@ -13,11 +15,7 @@
           <%= text_field_tag :attempt, nil, id: "enigme_1", class: 'form-control custom-input', autofocus: true %>
           <%= submit_tag "Valider", class: 'custom-btn' %>
         <% end %>
-        <p class="flash_error">
-          <% if flash[:error] %>
-            <%= flash[:error] %>
-          <% end %>
-        </p>
+        <%= render "errors" %>
       </div>
     </div>
   </div>

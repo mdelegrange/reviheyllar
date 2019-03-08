@@ -5,15 +5,27 @@ h1 {
 p {
   margin-bottom: 30px;
 }
+.page-content {
+  max-width: 850px;
+  color: white;
+}
 .custom-input {
   background: black;
   color: white;
   border: none;
+  border-bottom: 5px solid white;
+  border-radius: 0;
+  box-shadow: none;
   font-weight: bolder;
   margin: 10px;
   &::placeholder {
     color: white;
     opacity: 0.9;
+  }
+  &:focus {
+    border: none;
+    border-bottom: 5px solid white;
+    box-shadow: none;
   }
 }
 #enigme_1 {
@@ -27,4 +39,13 @@ p {
 }
 video {
   max-width: 600px;
+}
+.bg-white {
+  background: white;
+  color: black;
+  padding: 0px 2px;
+  margin-right: 2px;
+}
+.t-black {
+  color: black;
 }
