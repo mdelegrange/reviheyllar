@@ -10,9 +10,9 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render "mobile_navbar" %>
-    <div class="container home-container">
-      <%= render "side_bar" %>
+    <%= render "mobile_navbar" unless params[:action] == "home" %>
+    <div class="container home-container <%= "mg-t-30px" if params[:action] == "home" %>">
+      <%= render "side_bar" unless params[:action] == "home" %>
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application' %>
