@@ -84,7 +84,7 @@ class PagesController < ApplicationController
       redirect_to bravo_path
     else
       flash_error
-      render 'chapeau'
+      redirect_to enigme5_path
     end
   end
 
