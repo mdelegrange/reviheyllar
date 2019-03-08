@@ -1,0 +1,15 @@
+.custom-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  &:hover {
+    text-decoration: underline;
+    color: white;
+  }
+}
+.btn-black-t {
+  color: black;
+  &:hover {
+    color: black;
+  }
+}

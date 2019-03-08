@@ -1,0 +1,18 @@
+<div class="container home-container">
+  <%= render "side_bar", enigma: 4 %>
+  <div class="window">
+    <div class="inner-window">
+      <div class="page-content text-center">
+        <h1>Enigme 4</h1>
+        <p>Désolé pour hier soir d’avoir fini à l’envers, la tête dans le cul, l’cul dans le brouillard </p>
+        <br>
+        <p>Qu’avez-vous utilisé pour faire tomber les personnages ?</p>
+        <%= form_tag enigme4_attempt_path, class: 'form-inline' do %>
+          <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
+          <%= submit_tag "Valider", class: 'custom-btn' %>
+        <% end %>
+        <%= render "errors" %>
+      </div>
+    </div>
+  </div>
+</div>
