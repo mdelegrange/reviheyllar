@@ -1,25 +1,20 @@
-<div class="container home-container">
-  <%= render "side_bar", enigma: 3 %>
-  <div class="window">
-    <div class="inner-window">
-      <div class="page-content text-center">
+<div class="window">
+  <div class="inner-window">
+    <div class="page-content text-center">
 
-        <h1>Enigme 3</h1>
-        <div class="audio">
-          <%= audio_tag("song1.mp3", controls: true) %>
-          <%= audio_tag("song2.mp3", controls: true) %>
-          <%= audio_tag("song3.mp3", controls: true) %>
-        </div>
-
-        <p>Qu’avez-vous utilisé pour faire tomber les personnages ?</p>
-        <%= form_tag enigme3_attempt_path, class: 'form-inline' do %>
-          <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
-          <%= submit_tag "Valider", class: 'custom-btn' %>
-        <% end %>
-        <%= render "errors" %>
+      <h1>Enigme 3</h1>
+      <div class="audio">
+        <%= audio_tag("song1.mp3", controls: true) %>
+        <%= audio_tag("song2.mp3", controls: true) %>
+        <%= audio_tag("song3.mp3", controls: true) %>
       </div>
+
+      <p>Qu’avez-vous utilisé pour faire tomber les personnages ?</p>
+      <%= form_tag enigme3_attempt_path, class: 'form-inline' do %>
+        <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
+        <%= submit_tag "Valider", class: 'custom-btn' %>
+      <% end %>
+      <%= render "errors" %>
     </div>
   </div>
 </div>
-
-
