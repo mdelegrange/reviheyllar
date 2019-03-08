@@ -1,10 +1,16 @@
 import "bootstrap";
 
 const pulse = () => {
-  const element = document.getElementById("pulse");
+  const pulse = document.getElementById("pulse");
   if (pulse) {
     setInterval(() => {
-      element.classList.toggle('t-black');
+      pulse.classList.toggle('t-black');
+    }, 500)
+  }
+  const bgPulse = document.getElementById("bg-pulse");
+  if (bgPulse) {
+    setInterval(() => {
+      bgPulse.classList.toggle('bg-white');
     }, 500)
   }
 }

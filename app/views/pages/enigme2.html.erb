@@ -1,12 +1,13 @@
-<div class="container home-container text-center">
+<div class="container home-container">
+  <%= render "side_bar", enigma: 2 %>
   <div class="window">
     <div class="inner-window">
-      <div class="page-content">
+      <div class="page-content text-center">
       <h1>Enigme 2</h1>
       <p>Lors du Rallye nos nerfs ont été mis à rude épreuve. Heureusement que nous n'étions pas seuls...</p>
       <div>
         <%= form_tag enigme2_attempt_path, class: 'form-inline' do %>
-          <%= text_field_tag :attempt, nil, class: 'form-control custom-input', autofocus: true %>
+          <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
           <%= submit_tag "Valider", class: 'custom-btn' %>
         <% end %>
         <%= render "errors" %>

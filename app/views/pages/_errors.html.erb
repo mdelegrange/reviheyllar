@@ -1,6 +1,6 @@
-<p class="flash_error">
+<p class="flash <%= 't-green' if @answer %>">
   <% if @answer %>
-    <%=  %>
+    <span id="bg-pulse">"Bonne réponse!!</span>
   <% elsif flash[:error] %>
     <%= flash[:error] %>
   <% end %>

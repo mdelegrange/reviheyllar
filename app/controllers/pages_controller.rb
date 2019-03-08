@@ -12,12 +12,12 @@ class PagesController < ApplicationController
   end
 
   def enigme1
-    @answer = Answer.find_by(enigma: "enigme1")
+    @answer = Answer.find_by(enigma: 1)
   end
 
   def enigme1_attempt
     if @attempt.upcase == "FAITES TOMBER LES BINOCLARDS"
-      Answer.create!(enigma: "enigme1", content: "Faites tomber les binoclards")
+      Answer.create!(enigma: 1, content: "Faites tomber les binoclards")
       redirect_to enigme2_path
     else
       flash_error
@@ -26,10 +26,13 @@ class PagesController < ApplicationController
   end
 
   def enigme2
+    @answer = Answer.find_by(enigma: 2)
+    go_to_first_unsolved_enigma
   end
 
   def enigme2_attempt
     if @attempt.upcase == "HOMME"
+      Answer.create!(enigma: 2, content: "Homme")
       redirect_to enigme3_path
     else
       flash_error
@@ -39,11 +42,14 @@ class PagesController < ApplicationController
 
 
   def enigme3
+    @answer = Answer.find_by(enigma: 3)
+    go_to_first_unsolved_enigma
   end
 
   def enigme3_attempt
     answers = ["PRENOM", "PRÉNOM","PRENOMS", "PRÉNOMS"]
     if answers.include?(@attempt.upcase)
+      Answer.create!(enigma: 3, content: "Prénoms")
       redirect_to enigme4_path
     else
       flash_error
@@ -52,11 +58,14 @@ class PagesController < ApplicationController
   end
 
   def enigme4
+    @answer = Answer.find_by(enigma: 4)
+    go_to_first_unsolved_enigma
   end
 
   def enigme4_attempt
     answers = ["CHAPEAU", "CHAPEAUX"]
     if answers.include?(@attempt.upcase)
+      Answer.create!(enigma: 4, content: "Chapeaux")
       redirect_to enigme5_path
     else
       flash_error
@@ -65,10 +74,13 @@ class PagesController < ApplicationController
   end
 
   def enigme5
+    @answer = Answer.find_by(enigma: 5)
+    go_to_first_unsolved_enigma
   end
 
   def enigme5_attempt
     if @attempt.upcase == "JULIE"
+      Answer.create!(enigma: 5, content: "Julie")
       redirect_to bravo_path
     else
       flash_error
@@ -87,5 +99,14 @@ class PagesController < ApplicationController
 
   def flash_error
     flash[:error] = "#{@attempt}?!? Mauvaise réponse, essayez encore..."
+  end
+
+  def go_to_first_unsolved_enigma
+    @last_answer = Answer.last
+    if @answer.nil? || @last_answer.enigma < @answer.enigma
+      id = Answer.last ? Answer.last.enigma + 1 : 1
+      render "enigme#{id}"
+      # redirect_to self.public_send("enigme#{id}_path".to_sym)
+    end
   end
 end
