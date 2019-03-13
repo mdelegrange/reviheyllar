@@ -1,0 +1,27 @@
+.clocks {
+  justify-content: center;
+  max-width: 750px;
+  margin: auto;
+  margin-bottom: 30px;
+  .pictures {
+    margin: 10px;
+  }
+}
+.clock {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+.triangle-rouge {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-image: linear-gradient(135deg, red 50%, black 50%);
+}
+.triangle-jaune {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-image: linear-gradient(135deg, black 50%, yellow 50%);
+}
+

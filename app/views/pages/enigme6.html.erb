@@ -1,0 +1,40 @@
+<div class="window">
+  <div class="inner-window">
+    <div class="page-content text-center">
+      <h1>
+        <div class="triangle-rouge"></div>
+        Enigme 6
+        <div class="triangle-jaune"></div>
+      </h1>
+      <div class="pictures-container clocks">
+        <div class="pictures">
+          <%= image_tag "01.png", class:"clock" %>
+        </div>
+        <div class="pictures">
+          <%= image_tag "02.png", class:"clock" %>
+        </div>
+        <div class="pictures">
+          <%= image_tag "03.png", class:"clock" %>
+        </div>
+        <div class="pictures">
+          <%= image_tag "04.png", class:"clock" %>
+        </div>
+        <div class="pictures">
+          <%= image_tag "05.png", class:"clock" %>
+        </div>
+        <div class="pictures">
+          <%= image_tag "06.png", class:"clock" %>
+        </div>
+        <div class="pictures">
+          <%= image_tag "07.png", class:"clock" %>
+        </div>
+      </div>
+      <!-- <p>Qu’avez-vous utilisé pour faire tomber les personnages ?</p> -->
+      <%= form_tag enigme6_attempt_path, class: 'form-inline' do %>
+        <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
+        <%= submit_tag "Valider", class: 'custom-btn' %>
+      <% end %>
+      <%= render "errors" %>
+    </div>
+  </div>
+</div>

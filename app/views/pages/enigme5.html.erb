@@ -2,11 +2,7 @@
   <div class="inner-window">
     <div class="page-content text-center">
       <h1>Enigme 5</h1>
-      <div class="flex-line">
-        <div>TA</div>
-        <%= image_tag "bobine.jpg", alt: "bobine" %>
-      </div>
-      <p>Qui est le dernier personnage?</p>
+      <%= audio_tag("song3.mp3", controls: true) %>
       <%= form_tag enigme5_attempt_path, class: 'form-inline' do %>
         <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
         <%= submit_tag "Valider", class: 'custom-btn' %>
@@ -15,3 +11,4 @@
     </div>
   </div>
 </div>
+

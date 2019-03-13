@@ -1,15 +1,13 @@
 <div class="window">
   <div class="inner-window">
     <div class="page-content text-center">
-
       <h1>Enigme 3</h1>
-      <div class="audio">
-        <%= audio_tag("song1.mp3", controls: true) %>
-        <%= audio_tag("song2.mp3", controls: true) %>
-        <%= audio_tag("song3.mp3", controls: true) %>
-      </div>
-
-      <p>Qu’avez-vous utilisé pour faire tomber les personnages ?</p>
+      <p>Chaque jour est une chance!</p>
+      <p class="chiffres">31-48-23-24-36-42-27-49</p>
+      <p class="chiffres">41-46-32-21-22-49-47-48-26-36-23-24-31-33</p>
+      <p class="chiffres">24-27-36-23-31-48-49-42</p>
+      <p class="chiffres">38-28-23-33-43-48</p>
+      <p class="">21-26-31-36-48-41-49-46-47</p>
       <%= form_tag enigme3_attempt_path, class: 'form-inline' do %>
         <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
         <%= submit_tag "Valider", class: 'custom-btn' %>
