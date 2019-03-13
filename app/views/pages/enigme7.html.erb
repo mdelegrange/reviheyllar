@@ -1,0 +1,22 @@
+<div class="window">
+  <div class="inner-window">
+    <div class="page-content text-center">
+      <h1>Enigme 7</h1>
+      <%= image_tag "mots_croisés.png", class: "mots-croises" %>
+      <!-- <div class="flex-line">
+        <div>TA</div>
+        <%#= image_tag "bobine.jpg", alt: "bobine" %>
+      </div> -->
+      <p class="chiffres">1- Nous l'avons utilisé pour acheter le chien.</p>
+      <p class="chiffres">2- Calcutta, Bangkok, Jakarta | Calcutta, Hong-Kong, Bangkok | Ho-Chi-Minh, Jakarta</p>
+      <p class="chiffres">3- Jeudi acquisition, affaire conclue.</p>
+      <p class="chiffres">4- La théorie des jeux + soirée au club de jeux</p>
+      <p>5- Réduit à l'inconnu, nous avions pour ordre de l'intercepter</p>
+      <%= form_tag enigme7_attempt_path, class: 'form-inline' do %>
+        <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
+        <%= submit_tag "Valider", class: 'custom-btn' %>
+      <% end %>
+      <%= render "errors" %>
+    </div>
+  </div>
+</div>

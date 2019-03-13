@@ -15,5 +15,11 @@ Rails.application.routes.draw do
   post 'enigme4_attempt', to: 'pages#enigme4_attempt'
   get 'enigme5', to: 'pages#enigme5'
   post 'enigme5_attempt', to: 'pages#enigme5_attempt'
+  get 'enigme6', to: 'pages#enigme6'
+  post 'enigme6_attempt', to: 'pages#enigme6_attempt'
+  get 'enigme7', to: 'pages#enigme7'
+  post 'enigme7_attempt', to: 'pages#enigme7_attempt'
+  get 'enigme8', to: 'pages#enigme8'
+  post 'enigme8_attempt', to: 'pages#enigme8_attempt'
   get 'bravo', to: 'pages#bravo'
 end

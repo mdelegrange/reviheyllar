@@ -1,10 +1,16 @@
 <div class="window">
   <div class="inner-window">
     <div class="page-content text-center">
-      <h1>Enigme 4</h1>
-      <p>Même lorsque la vérité crève les yeux...</p>
-      <%= image_tag "tableau.png", class:"tableau" %>
-      <%= form_tag enigme4_attempt_path, class: 'form-inline' do %>
+
+      <h1>Enigme 3</h1>
+      <div class="audio">
+        <%= audio_tag("song1.mp3", controls: true) %>
+        <%= audio_tag("song2.mp3", controls: true) %>
+        <%= audio_tag("song3.mp3", controls: true) %>
+      </div>
+
+      <p>Qu’avez-vous utilisé pour faire tomber les personnages ?</p>
+      <%= form_tag enigme3_attempt_path, class: 'form-inline' do %>
         <%= text_field_tag :attempt, nil, class: "form-control custom-input #{"t-green" if @answer}", autofocus: true, value: "#{@answer.content if @answer}" %>
         <%= submit_tag "Valider", class: 'custom-btn' %>
       <% end %>
@@ -12,4 +18,3 @@
     </div>
   </div>
 </div>
-
