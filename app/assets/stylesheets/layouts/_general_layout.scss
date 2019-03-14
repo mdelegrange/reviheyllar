@@ -58,8 +58,43 @@ video {
   }
 }
 .mobile-navbar {
-  margin-top: 30px;
-  margin-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 0.8em;
+  position: fixed;
+  background: white;
+  border-bottom: 5px solid #DEE1E6;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.mobile-navbar {
+  a, span {
+    position: relative;
+    z-index: 100;
+  }
+  > div {
+    position: relative;
+  }
+  #arrows {
+    height: 50px;
+    width: 50px;
+    background: white;
+    border-bottom: 5px solid #DEE1E6;
+    border-radius: 50px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    justify-content: center;
+    position: absolute;
+    bottom: -25px;
+    left: calc(50% - 25px)
+  }
+}
+.m-t-neg200pc {
+  margin-top: -200%;
+}
+.m-t-neg10px {
+  margin-top: -10px;
 }
 .opacity-5 {
   opacity: 0.5;
