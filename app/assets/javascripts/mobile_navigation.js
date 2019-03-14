@@ -3,7 +3,7 @@ function mobileNavigation() {
   const mobileNavContent = document.querySelector(".mobile-navbar > div");
   const arrows = document.getElementById("arrows");
   if (arrows) {
-    arrows.addEventListener("click", (event) => {
+    arrows.addEventListener("click", function(event) {
       mobileNav.classList.toggle("m-t-neg10px");
       mobileNavContent.classList.toggle("m-t-neg200pc");
       if (mobileNav.classList.contains("m-t-neg10px")) {
